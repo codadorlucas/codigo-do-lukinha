@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre você</title>
+    <style>
+        body{
+            background-color:rgb(206, 250, 250);
+            font: normal 25pt normal
+        }
+        h1{
+            color:rgb(255, 255, 122);
+            font: normal 40pt normal
+        }
+        p{
+            color:black
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <script>
+        window.confirm(`__Obs__ Para todos os valores que você for digitar posteriormente, digite apenas ponto final e apenas para representar os centavos, ex: 2500.30; 3500.90; 15440.45`);
+        let nome = window.prompt("Qual o seu nome?");
+        document.write(`Seu nome em maiusculo fica: ${nome.toUpperCase()}<br/>`);
+        document.write(`Seu nome em minúsculo fica: ${nome.toLowerCase()}<br/>`);
+        document.write(`Seu nome em negrito fica: <strong>${nome}</strong><br/>`);
+        let idade = Number(window.prompt("Qual a sua idade?"));
+        
+        window.alert("O dobro da sua idade é: " + idade*2);
+        let salario = Number(window.prompt("Quanto você pretende ganhar em um trabalho futuro?"));
+        let salario2 = salario/30
+        let salario3 = salario2.toLocaleString('pt-BR',{style: 'currency',currency: 'BRL'});
+        window.alert(`por dia durante 30 dias você receberá ${salario3}`);
+        window.prompt("Diga algo que você quer comprar no ano de 2024");
+        let compra = Number(window.prompt("Quanto você pretente gastar na compra desse produto?"));
+        let sobraDaCompra = salario-compra
+        let sobraDaCompra2 = sobraDaCompra.toLocaleString('pt-BR',{style: 'currency',currency: 'BRL'});
+        window.alert("Se você comprar esse produto com um único salário bruto que você pretende receber, você ficará com " + sobraDaCompra2);
+        
+    </script>
+    
+</body>
+</html>

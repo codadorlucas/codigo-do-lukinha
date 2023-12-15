@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos DOM</title>
+    <style>
+        body {
+            background-color:rgb(49, 49, 255);
+            color:white; 
+            font: normal 20pt Serif;
+
+        }
+        p {
+         color:brown
+        }
+        
+
+    </style>
+
+</head>
+
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div>Testando</div>
+    <div>Testando mais uma vez</div>
+    <div>Testando mais outra vez</div>
+    <div id="teste1">div 1</div>
+    <div id="teste2">div 2</div>
+
+    <script>
+
+       // document.write(document.URL);
+        var elementoTeste = window.document.getElementsByTagName("p")[0]; // variavel que guarda o que está dentro do elemento dps de TagName em Body.
+        window.document.write(elementoTeste.innerText); // documet.write(p1.innerText) mostra o texto que está dentro do elemento que está dentro da variável
+        elementoTeste.style.color = 'black' // muda a cor do texto q está dentro do elemento que está guardado na variével
+        var pagina = window.document.body // guarda a parte intermediária
+        pagina.style.background = 'gray' // muda a cor da pagina
+        var elementoTeste2 = window.document.getElementsByTagName('p')[1];
+        document.write(elementoTeste2.innerHTML); // com .innerHTML só aparece a formatação que está dentro do elemento!!
+        window.alert(elementoTeste2.innerText); // mensagem aparece na tela referente ao texto que está dentro do elemento que está dentro da variável, acresecenta o .innerText dps da varivel
+        var testeDiv = document.getElementById('teste2'); // guardei uma ID no div da linha 31 -> teste2 em seguida usei getElementById("") para selecionar a Id desse (guardei tudo isso dentro de uma variavel e usei essa variavel(testeDiv).style.background: 'blue' conforme linha 47)
+        var testeDiv2 = document.getElementsByTagName('div')[0]; // na linha 27 criei um div sem Id (posição 0), em seguida criai a variavel (testeDiv2) guardando essa div conforme linha 45 e na linha 48 usei essa variavel.style.background para mudar a cor da linha dessa div para preto no site html
+        var testeDiv3 = document.getElementById('teste1'); // igual linha 44
+        testeDiv.style.background = 'blue'
+        testeDiv2.style.background = 'black'
+        testeDiv3.style.background = 'red'
+        window.document.getElementById('teste1').innerText = 'Olá' // peguei o conteudo da div com id 'teste1' e  usei .innerText = ' ' para mudar o conteudo dessa div
+        testeDiv.innerText = 'Olá mundo' // forma simplificada da linha 50 / peguei a variavel que tinha a div com seu Id e usei .innerText = ' ' para mudar o conteudo dessa div
+    
+    </script>
+</body>
+</html>
+
+<!--
+    
+  DOM é Document Object Model (conj de objetos dentro do seu navegador que vai dar acesso aos componentes internos do seu web site, ele n funciona dentro do node.js, está presente quando to rodando javascrip dentro do navegador
+  arvore DOM do meu site, ela começa da raiz dentro do navegador a gente chama, então tudo dentro do javascript está dentro de um objeto window
+  window (janela) - tem location, document, history
+  document - html
+  html - head e body
+  head - meta title
+  body - h1, p, p2, div
+  p2 - strong            (n mostra o 2 de p)
+
+  location - diz qual é a localização do seu site, qual a URL, diz qual a página atual, página anterior
+  document - 
+  history - vai guardando, de onde vc veio e pra onde vc vai
+  dentro do document tem 'html' - nesse caso existe um objeto chamado html, a parte html do site
+  dentro do html tem head e body - cabeçalho e corpo
+  nesse documento dentro de head tem tags (meta, title etc.)
+  já dentro de body nesse documento tem (h1, p, p, div)
+  no segundo p tem (strong) -> negrito
+
+  pode escrever dentro do document -> window.document.write(" ")
+  algo já dentro do documento -> window.document ou só document, document.write(window.document ou só document),.charset por exemplo; URL também
+  
+dá pra navegar pelos elementos da arvore DOM por essas 5 primeiras formas:
+
+1 - por marca -> está dentro de document -> getElementsByTagName() ->  
+2 - por ID -> quando o site é mais evoluído e precisa selecionar 1 por 1 -> getElementByID() ->
+3 - por Nome -> getElementsByName()[]
+4 - por Classe -> getElementsByClassName()[]
+5 - por Seletor
+
+
+
+  )-->
